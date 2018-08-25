@@ -1,0 +1,39 @@
+server:
+  port: 8002
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis.cfg.xml
+  mapper-locations: classpath:/mybatis/mapper/**/*.xml
+  type-aliases-package: com.chenyilei.springcloud.entities
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+spring:
+  application: #\u975E\u5E38\u7684\u91CD\u8981!! \u5BF9\u5916\u66B4\u9732\u540D\u5B57
+    name: microservicecloud-dept
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book
+    username: root
+    password: abcdpl1230
+
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 500
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-dept8002
+    prefer-ip-address: true #访问显示 IP
+
+info:
+  app.name: chenyilei-microservicecloud2222
+  company.name: www.chenyilei.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
