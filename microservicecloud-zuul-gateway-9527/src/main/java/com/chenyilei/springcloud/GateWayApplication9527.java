@@ -9,7 +9,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 @SpringBootApplication
 @EnableZuulProxy
 public class GateWayApplication9527 {
-
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(GateWayApplication9527.class, args);
     }
